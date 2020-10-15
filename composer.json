@@ -1,0 +1,14 @@
+{
+    "name": "duncanrmorris/assets",
+    "description": "The Assets Package for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Duncan Morris",
+            "email": "duncanmorris07@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
