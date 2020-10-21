@@ -11,13 +11,13 @@
   
   <div class="row justify-content-end">
     
-  <a href="{{route('assays.controls',['id' => AUTH::user()->id])}}"><i class="fa fa-cog text-info"></i></a>
+  <a href="{{route('assets.controls',['id' => AUTH::user()->id])}}"><i class="fa fa-cog text-info"></i></a>
     
   </div>
   
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-    <a class="nav-link" id="home-tab" href="{{route('assays.controls',['id' => AUTH::user()->id])}}" role="tab" aria-controls="home" aria-selected="true">Users</a>
+    <a class="nav-link" id="home-tab" href="{{route('assets.controls',['id' => AUTH::user()->id])}}" role="tab" aria-controls="home" aria-selected="true">Users</a>
     </li>
     
     
@@ -33,11 +33,11 @@
 
                     <h4>Setup Required</h4>
                     <p>Please click the button below to setup the user for the first time.</p>
-                    <a href="{{route('assays.controls.setup',['id' => $u->id])}}"><button class="btn btn-md btn-success">Setup User</button></a>
+                    <a href="{{route('assets.controls.setup',['id' => $u->id])}}"><button class="btn btn-md btn-success">Setup User</button></a>
 
                     @else
                     @foreach($controls as $c)
-                    <form action="{{ route('assays.controls.update',['id' => $c->id]) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('assets.controls.update',['id' => $c->id]) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')  
 
@@ -50,9 +50,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Assay Admin</td>
+                                    <td>Assets Admin</td>
                                     <td>
-                                        @if($c->assay_admin == "on")
+                                        @if($c->asset_admin == "on")
                                         <input type="checkbox" name="admin" onchange="submit()" checked>
                                         @else
                                         <input type="checkbox" name="admin" onchange="submit()" >
@@ -60,9 +60,9 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>View Assays</td>
+                                    <td>View Assets</td>
                                     <td>
-                                        @if($c->assay_view == "on")
+                                        @if($c->asset_view == "on")
                                         <input type="checkbox" name="view" onchange="submit()" checked>
                                         @else
                                         <input type="checkbox" name="view" onchange="submit()" >
@@ -70,9 +70,9 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Create New Assay</td>
+                                    <td>Create New Asset</td>
                                     <td>
-                                        @if($c->assay_add == "on")
+                                        @if($c->asset_add == "on")
                                         <input type="checkbox" name="new" onchange="submit()" checked>
                                         @else
                                         <input type="checkbox" name="new" onchange="submit()">
@@ -80,9 +80,9 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Edit Assay</td>
+                                    <td>Edit Asset</td>
                                     <td>
-                                        @if($c->assay_edit == "on")
+                                        @if($c->asset_edit == "on")
                                         <input type="checkbox" name="edit" onchange="submit()" checked>
                                         @else
                                         <input type="checkbox" name="edit" onchange="submit()">
@@ -90,9 +90,9 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Delete Assay</td>
+                                    <td>Delete Asset</td>
                                     <td>
-                                        @if($c->assay_del == "on")
+                                        @if($c->asset_del == "on")
                                         <input type="checkbox" name="del" onchange="submit()" checked>
                                         @else
                                         <input type="checkbox" name="del" onchange="submit()">

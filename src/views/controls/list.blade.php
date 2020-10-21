@@ -17,13 +17,13 @@
   
   <div class="row justify-content-end">
     
-  <a href="{{route('assays.controls',['id' => AUTH::user()->id])}}"><i class="fa fa-cog text-info"></i></a>
+  <a href="{{route('assets.controls',['id' => AUTH::user()->id])}}"><i class="fa fa-cog text-info"></i></a>
     
   </div>
   
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-    <a class="nav-link" id="home-tab" href="{{route('assays')}}" role="tab" aria-controls="home" aria-selected="true">Home</a>
+    <a class="nav-link" id="home-tab" href="{{route('assets')}}" role="tab" aria-controls="home" aria-selected="true">Home</a>
     </li>
     
     
@@ -32,7 +32,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h3>{{ __('Assays Controls') }}</h3></div>
+                <div class="card-header"><h3>{{ __('assets Controls') }}</h3></div>
 
                 <div class="card-body">
 
@@ -50,8 +50,8 @@
                                 <td>{{$u->name}}</td>
                                 <td>{{$u->email}}</td>
                                 <td>
-                                <a href="{{route('assays.controls.view',['id' => $u->id])}}" ><button class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"></i></button></a>
-                                <a href="{{route('assays.controls.edit',['id' => $u->id])}}" ><button class="btn btn-sm btn-outline-warning"><i class="fa fa-edit"></i></button></a>
+                                <a href="{{route('assets.controls.view',['id' => $u->id])}}" ><button class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"></i></button></a>
+                                <a href="{{route('assets.controls.edit',['id' => $u->id])}}" ><button class="btn btn-sm btn-outline-warning"><i class="fa fa-edit"></i></button></a>
                                 </td>
                             </tr>
                             @endforeach

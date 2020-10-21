@@ -30,7 +30,7 @@
         </li>
         @if($c->asset_add == "on")
         <li class="nav-item">
-        <a class="nav-link" id="new-tab" href="#" data-toggle="modal" data-target="#newclient" role="tab" aria-controls="new" aria-selected="true">New Assay</a>
+        <a class="nav-link" id="new-tab" href="#" data-toggle="modal" data-target="#newclient" role="tab" aria-controls="new" aria-selected="true">New Asset</a>
         </li>
         @endif
         
@@ -40,7 +40,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h3>{{ __('assets') }}</h3></div>
+                <div class="card-header"><h3>{{ __('Assets') }}</h3></div>
 
                 <div class="card-body">
                     
@@ -51,13 +51,22 @@
                                 Name
                             </th>
                             <th>
-                                Barcode
+                                Serial No.
                             </th>
                             <th>
-                                Lot No.
+                                Asset Tag
                             </th>
                             <th>
-                                Manufactured Date
+                                Purchase Date
+                            </th>
+                            <th>
+                                Warranty Date
+                            </th>
+                            <th>
+                                Issued To
+                            </th>
+                            <th>
+                                Location
                             </th>
                             <th>
                                 Status
@@ -188,13 +197,13 @@
     </div>
 </div>
 
-@if($c->assay_add == "on")
+@if($c->asset_add == "on")
 <!-- NEW CLIENT MODAL -->  
 <div class="modal fade" id="newclient" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header card-header">
-                <h4 class="modal-title" id="exampleModalLongTitle">New Assay</h4>
+                <h4 class="modal-title" id="exampleModalLongTitle">New Asset</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -213,16 +222,7 @@
                     <input type="text" name="barcode" class="form-control" placeholder="Barcode" value="">
                     </div>
 
-                    <div class="form-group">
-                    <h5>Lot Number</h5>
-                    <input type="text" name="assay_lot_no" class="form-control" placeholder="Assay Lot Number" required>
-                    </div>
-
-                    <div class="form-group">
-                    <h5>Manufactured Date</h5>
-                    <input type="text" name="manufactured_date" class="form-control" placeholder="Assay Manufactured Date" required>
-                    </div>
-
+                    
                                 
                                         
                             

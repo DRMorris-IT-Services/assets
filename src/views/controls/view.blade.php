@@ -11,13 +11,13 @@
   
   <div class="row justify-content-end">
     
-  <a href="{{route('backup.controls')}}"><i class="fa fa-cog text-info"></i></a>
+  <a href="{{route('assets.controls')}}"><i class="fa fa-cog text-info"></i></a>
     
   </div>
   
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-    <a class="nav-link" id="home-tab" href="{{route('backup.controls')}}" role="tab" aria-controls="home" aria-selected="true">Users</a>
+    <a class="nav-link" id="home-tab" href="{{route('assets.controls')}}" role="tab" aria-controls="home" aria-selected="true">Users</a>
     </li>
     
     
@@ -46,15 +46,15 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>View Backups</td>
+                                    <td>View assetss</td>
                                     <td><input type="checkbox" name="view"></td>
                                 </tr>
                                 <tr>
-                                    <td>Create New Backup</td>
+                                    <td>Create New assets</td>
                                     <td><input type="checkbox" name="new"></td>
                                 </tr>
                                 <tr>
-                                    <td>Delete Backups</td>
+                                    <td>Delete assetss</td>
                                     <td><input type="checkbox" name="del"></td>
                                 </tr>
                             </tbody>
