@@ -58,8 +58,15 @@ Within this package we use the following database structure:
 |Field|Type   |Null   |Notes   |
 |-----|-------|-------|--------|
 |asset_name|String|Yes||
-|   |   |   |   |
-|   |   |   |   |
+|asset_model|String|Yes||
+|asset_make|String|Yes||
+|asset_serial_no|String|Yes||
+|asset_tag_no|String|Yes||
+|asset_purchase_date|Date|Yes||
+|asset_warranty_date|Date|Yes||
+|asset_assigned_to|String|Yes||
+|asset_location|String|Yes||
+|asset_software|String|Yes||
 
 
 ### Assets Controls Table
