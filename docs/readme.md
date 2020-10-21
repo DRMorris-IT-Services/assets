@@ -50,3 +50,13 @@ Within this package we have the following folder structure:
 </pre>
 
 ## Database Structure
+
+Within this package we use the following database structure:
+
+### Assets Table
+
+|Field|Type   |Null   |Notes   |
+|-----|-------|-------|--------|
+|asset_name   |String   |Yes   |       |
+|   |   |   |   |
+|   |   |   |   |
