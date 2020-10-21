@@ -10,6 +10,9 @@ The vision for this package is to provide a complete module/package to run withi
 
 This package will provide the user with the functions to manage thier company assets.
 
+Therefore allowing the company to easily enter, update and remove assets where required.  Along with other functions to assign the assets to a user and location.
+Allowing the company to easily locate their assets when required.
+
 This package is designed to be offered along side other packages from DRMorris IT Services to make up a complete solution.
 
 
