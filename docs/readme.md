@@ -57,7 +57,7 @@ Within this package we use the following database structure:
 
 |Field|Type   |Null   |Notes   |
 |-----|-------|-------|--------|
-|asset_name   |String   |Yes   |       |
+|asset_name|String|Yes||
 |   |   |   |   |
 |   |   |   |   |
 
@@ -66,9 +66,10 @@ Within this package we use the following database structure:
 
 |Field|Type   |Null   |Notes   |
 |-----|-------|-------|--------|
-|asset_admin   |String   |Yes   |       |
-|asset_view   |String   |Yes   |   |
-|asset_add   |String   |Yes   |   |
+|user_id|String|No||
+|asset_admin|String|Yes||
+|asset_view|String|Yes||
+|asset_add|String|Yes||
 |asset_edit|String|Yes||
 |asset_download|String|Yes||
 |asset_del|String|Yes||
