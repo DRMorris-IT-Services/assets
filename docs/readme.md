@@ -60,3 +60,15 @@ Within this package we use the following database structure:
 |asset_name   |String   |Yes   |       |
 |   |   |   |   |
 |   |   |   |   |
+
+
+### Assets Controls Table
+
+|Field|Type   |Null   |Notes   |
+|-----|-------|-------|--------|
+|asset_admin   |String   |Yes   |       |
+|asset_view   |String   |Yes   |   |
+|asset_add   |String   |Yes   |   |
+|asset_edit|String|Yes||
+|asset_download|String|Yes||
+|asset_del|String|Yes||
