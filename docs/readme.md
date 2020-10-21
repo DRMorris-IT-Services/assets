@@ -16,36 +16,37 @@ This package is designed to be offered along side other packages from DRMorris I
 ## Folder Structure
 Within this package we have the following folder structure:
 
-...
+<pre>
 .
 ├── composer.json
 ├── docs
-│   └── readme.md
+│   └── readme.md
 ├── LICENSE
 ├── README.md
-└── src
-    ├── App
-    │   ├── assetscontrols.php
-    │   └── assets.php
-    ├── AssetsServiceProvider.php
-    ├── Http
-    │   └── Controllers
-    │       ├── AssetsController.php
-    │       └── AssetscontrolsController.php
-    ├── migrations
-    │   ├── 2020_10_20_062227_create_assets_table.php
-    │   └── 2020_10_20_063358_create_assets_controls_table.php
-    ├── routes
-    │   └── web.php
-    └── views
-        ├── controls
-        │   ├── edit.blade.php
-        │   ├── list.blade.php
-        │   └── view.blade.php
-        ├── index.blade.php
-        └── layouts
-            └── alerts.blade.php
-...
+├── src
+│   ├── App
+│   │   ├── assetscontrols.php
+│   │   └── assets.php
+│   ├── AssetsServiceProvider.php
+│   ├── Http
+│   │   └── Controllers
+│   │       ├── AssetsController.php
+│   │       └── AssetscontrolsController.php
+│   ├── migrations
+│   │   ├── 2020_10_20_062227_create_assets_table.php
+│   │   └── 2020_10_20_063358_create_assets_controls_table.php
+│   ├── routes
+│   │   └── web.php
+│   └── views
+│       ├── controls
+│       │   ├── edit.blade.php
+│       │   ├── list.blade.php
+│       │   └── view.blade.php
+│       ├── index.blade.php
+│       └── layouts
+│           └── alerts.blade.php
 
+
+</pre>
 
 ## Database Structure
