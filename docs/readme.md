@@ -57,6 +57,7 @@ Within this package we use the following database structure:
 
 |Field|Type   |Null   |Notes   |
 |-----|-------|-------|--------|
+|asset_id|String|No|Auto generated string|
 |asset_name|String|Yes||
 |asset_model|String|Yes||
 |asset_make|String|Yes||
