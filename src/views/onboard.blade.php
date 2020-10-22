@@ -86,6 +86,11 @@
                     </div>
 
                     <div class="form-group">
+                    <h5>Your Name</h5>
+                    <input type="text" name="assigned_to" class="form-control" placeholder="Your Name" value="{{$name}}" >
+                    </div>
+
+                    <div class="form-group">
                     <h5>Make</h5>
                     <input type="text" name="make" class="form-control" placeholder="Make" value="{{$make}}" >
                     </div>
