@@ -78,16 +78,19 @@
                         <tbody>
                         @foreach( $assets as $as)
                         <tr>
-                        <td><a href="{{ route('assets.view',[$as->assay_id]) }}" >{{$as->assay_name}}</a></td>
-                        <td>{{$as->assay_barcode}}</td>
-                        <td>{{$as->assay_lot_no}}</td>
-                        <td>{{date('d/m/y', strtotime($as->assay_manufactured_date))}}</td>
-                        <td>{{$as->assay_status}}</td>
+                        <td><a href="{{ route('assets.view',[$as->asset_id]) }}" >{{$as->asset_name}}</a></td>
+                        <td>{{$as->asset_serial_no}}</td>
+                        <td>{{$as->asset_tag_no}}</td>
+                        <td>{{date('d/m/y', strtotime($as->asset_purchased_date))}}</td>
+                        <td>{{date('d/m/y', strtotime($as->asset_warranty_date))}}</td>
+                        <td>{{$as->asset_assigned_to}}</td>
+                        <td>{{$as->asset_location}}</td>
+                        <td>{{$as->asset_status}}</td>
                         <td>
                         @if($c->asset_edit == "on")
-                        <button class="btn btn-sm btn-outline-warning fa fa-edit" data-toggle="modal" data-target="#editassay{{$as->assay_id}}"></button>
+                        <button class="btn btn-sm btn-outline-warning fa fa-edit" data-toggle="modal" data-target="#editassay{{$as->asset_id}}"></button>
                                 <!-- NEW CLIENT MODAL -->  
-                                <div class="modal fade" id="editassay{{$as->assay_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal fade" id="editassay{{$as->asset_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header card-header bg-warning">
@@ -96,7 +99,7 @@
                                                 <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <form class="col-md-12" action="{{ route('assets.update',['id' => $as->assay_id]) }}" method="POST" enctype="multipart/form-data">
+                                            <form class="col-md-12" action="{{ route('assets.update',['id' => $as->asset_id]) }}" method="POST" enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PUT')  
                                                 <div class="modal-body">
@@ -152,23 +155,23 @@
                                 <!-- END -->
                                 @endif
                                 @if($c->asset_del == "on")
-                                <button class="btn btn-sm btn-outline-danger fa fa-trash" data-toggle="modal" data-target="#assay_del{{$as->id}}"></button>
+                                <button class="btn btn-sm btn-outline-danger fa fa-trash" data-toggle="modal" data-target="#asset_del{{$as->id}}"></button>
                                     
                                     <!-- MODAL DELETE INVOICE -->
-                                    <form class="col-md-12" action="{{ route('assets.del',['id' => $as->assay_id]) }}" method="POST" enctype="multipart/form-data">
+                                    <form class="col-md-12" action="{{ route('assets.del',['id' => $as->asset_id]) }}" method="POST" enctype="multipart/form-data">
                                                             @csrf
                                                             @method('PUT')
                                             
-                                            <div class="modal fade" id="assay_del{{$as->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal fade" id="asset_del{{$as->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                                 <div class="modal-content">
                                                 <div class="modal-header bg-danger text-white">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">REMOVE Assay??</h5>
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">REMOVE Asset??</h5>
                                                 </div>
                                                 <div class="modal-body">
                                                 
                                                 <h3><i class="fa fa-warning" ></i> WARNING!!</h3>
-                                                <h5>You are going to remove this assay, are you sure?</h5>
+                                                <h5>You are going to remove this asset, are you sure?</h5>
                                                 <h5>This action can <b><u>NOT BE UNDONE!</u></b></h5>
                                                     
                                                 </div>
@@ -218,8 +221,43 @@
                     </div>
 
                     <div class="form-group">
-                    <h5>Barcode</h5>
-                    <input type="text" name="barcode" class="form-control" placeholder="Barcode" value="">
+                    <h5>Model</h5>
+                    <input type="text" name="model" class="form-control" placeholder="Model" >
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Serial Number</h5>
+                    <input type="text" name="serial_no" class="form-control" placeholder="Serial Number" >
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Asset Tag</h5>
+                    <input type="text" name="asset_tag" class="form-control" placeholder="Asset Tag" >
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Purchase Date</h5>
+                    <input type="text" name="purchase_date" class="form-control" placeholder="Purchase Date (Y-m-d)" >
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Warranty Date</h5>
+                    <input type="text" name="warranty_date" class="form-control" placeholder="Warranty Date (Y-m-d)" >
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Assigned To</h5>
+                    <input type="text" name="assigned_to" class="form-control" placeholder="Assigned To" >
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Location</h5>
+                    <input type="text" name="location" class="form-control" placeholder="Location" >
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Software</h5>
+                    <input type="text" name="software" class="form-control" placeholder="Software" >
                     </div>
 
                     

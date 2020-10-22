@@ -50,25 +50,26 @@ class AssetsController extends Controller
     {
         //
 
-        $assay_id = Str::random(60);
-        $barcode = $request['barcode'];
-
-        if($barcode == ""){
-            $barcode = rand();
-        }else{
-            $barcode == $request['barcode'];
-        }
+        $asset_id = Str::random(60);
+        $barcode = rand();
+        
 
         assets::create([
-            'assay_id' => $assay_id,
-            'assay_name' => $request['name'],
-            'assay_barcode' => $barcode,
-            'assay_lot_no' => $request['assay_lot_no'],
-            'assay_manufactured_date' => $request['manufactured_date'],
-            'assay_status' => "Pending Approval",
+            'asset_id' => $asset_id,
+            'asset_name' => $request['name'], 
+            'asset_model' => $request['model'], 
+            'asset_serial_no' => $request['serial_no'], 
+            'asset_barcode'  => $barcode, 
+            'asset_tag_no'  => $request['asset_tag'], 
+            'asset_purchase_date'  => $request['purchase_date'], 
+            'asset_warranty_date' => $request['warranty_date'], 
+            'asset_assigned_to'  => $request['assigned_to'], 
+            'asset_location'  => $request['location'], 
+            'asset_software'  => $request['software'],
+            'asset_status' => "Pending Approval",
         ]);
 
-        return back()->withStatus(__('Assay Successfully Created.'));
+        return back()->withStatus(__('Asset Successfully Created.'));
     }
 
     /**
@@ -104,7 +105,7 @@ class AssetsController extends Controller
     {
         //
 
-        assets::where('assay_id', $id)
+        assets::where('asset_id', $id)
         ->update([
             'assay_name' => $request['name'],
             'assay_barcode' => $request['barcode'],
