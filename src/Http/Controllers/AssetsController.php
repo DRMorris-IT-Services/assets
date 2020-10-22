@@ -78,9 +78,15 @@ class AssetsController extends Controller
      * @param  \App\assets  $assets
      * @return \Illuminate\Http\Response
      */
-    public function show(assets $assets)
+    public function show(assets $assets, $id, assetscontrols $assetscontrols)
     {
         //
+
+        return view('assets::view',[
+            'assets' => $assets->where('asset_id', $id)->get(),
+            'controls' => $assetscontrols->where('user_id',Auth::user()->id)->get(),
+            'count' => $assetscontrols->count(),
+        ]);
     }
 
     /**
@@ -89,9 +95,15 @@ class AssetsController extends Controller
      * @param  \App\assets  $assets
      * @return \Illuminate\Http\Response
      */
-    public function edit(assets $assets)
+    public function edit(assets $assets, $id, assetscontrols $assetscontrols)
     {
         //
+        return view('assets::edit',[
+            'assets' => $assets->where('asset_id', $id)->get(),
+            'controls' => $assetscontrols->where('user_id',Auth::user()->id)->get(),
+            'count' => $assetscontrols->count(),
+        ]);
+
     }
 
     /**
@@ -136,6 +148,6 @@ class AssetsController extends Controller
         assets::where('asset_id', $id)
         ->delete();
 
-        return back()->withDelete(__('Asset Successfully Deleted.'));
+        return redirect('/assets')->withDelete(__('Asset Successfully Deleted.'));
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @foreach($controls as $c)
-@if($c->assay_admin == null)
+@if($c->asset_admin == null)
 <script>window.location = "/home";</script>
 @endif
 @endforeach
