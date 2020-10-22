@@ -107,11 +107,17 @@ class AssetsController extends Controller
 
         assets::where('asset_id', $id)
         ->update([
-            'assay_name' => $request['name'],
-            'assay_barcode' => $request['barcode'],
-            'assay_lot_no' => $request['assay_lot_no'],
-            'assay_manufactured_date' => $request['manufactured_date'],
-            'assay_status' => $request['status'],
+            'asset_name' => $request['name'], 
+            'asset_model' => $request['model'], 
+            'asset_serial_no' => $request['serial_no'], 
+            'asset_barcode'  => $request['barcode'],
+            'asset_tag_no'  => $request['asset_tag'], 
+            'asset_purchase_date'  => $request['purchased_date'], 
+            'asset_warranty_date' => $request['warranty_date'], 
+            'asset_assigned_to'  => $request['assigned_to'], 
+            'asset_location'  => $request['location'], 
+            'asset_software'  => $request['software'],
+            'asset_status' => $request['status'],
         ]);
 
         return back()->withStatus(__('Assay Successfully Updated.'));

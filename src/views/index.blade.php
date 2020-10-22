@@ -81,7 +81,7 @@
                         <td><a href="{{ route('assets.view',[$as->asset_id]) }}" >{{$as->asset_name}}</a></td>
                         <td>{{$as->asset_serial_no}}</td>
                         <td>{{$as->asset_tag_no}}</td>
-                        <td>{{date('d/m/y', strtotime($as->asset_purchased_date))}}</td>
+                        <td>{{date('d/m/y', strtotime($as->asset_purchase_date))}}</td>
                         <td>{{date('d/m/y', strtotime($as->asset_warranty_date))}}</td>
                         <td>{{$as->asset_assigned_to}}</td>
                         <td>{{$as->asset_location}}</td>
@@ -94,7 +94,7 @@
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header card-header bg-warning">
-                                                <h4 class="modal-title" id="exampleModalLongTitle">Edit Assay</h4>
+                                                <h4 class="modal-title" id="exampleModalLongTitle">Edit Asset</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -105,33 +105,63 @@
                                                 <div class="modal-body">
                                                     <div class="form-group">
                                                     <h5>Name</h5>
-                                                    <input type="text" name="name" class="form-control" placeholder="Assay Name" required value="{{$as->assay_name}}">
+                                                    <input type="text" name="name" class="form-control" placeholder="Assay Name" required value="{{$as->asset_name}}">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                    <h5>Model</h5>
+                                                    <input type="text" name="model" class="form-control" placeholder="Model" value="{{$as->asset_model}}" >
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                    <h5>Serial Number</h5>
+                                                    <input type="text" name="serial_no" class="form-control" placeholder="Serial Number" value="{{$as->asset_serial_no}}">
                                                     </div>
 
                                                     <div class="form-group">
                                                     <h5>Barcode</h5>
-                                                    <input type="text" name="barcode" class="form-control" placeholder="Barcode" value="{{$as->assay_barcode}}">
+                                                    <input type="text" name="barcode" class="form-control" placeholder="Barcode" value="{{$as->asset_barcode}}">
                                                     </div>
 
                                                     <div class="form-group">
-                                                    <h5>Lot Number</h5>
-                                                    <input type="text" name="assay_lot_no" class="form-control" placeholder="Assay Lot Number" required value="{{$as->assay_lot_no}}">
+                                                    <h5>Asset Tag</h5>
+                                                    <input type="text" name="asset_tag" class="form-control" placeholder="Asset Tag" value="{{$as->asset_tag_no}}">
                                                     </div>
 
                                                     <div class="form-group">
-                                                    <h5>Manufactured Date</h5>
-                                                    <input type="text" name="manufactured_date" class="form-control" placeholder="Assay Manufactured Date" required value="{{$as->assay_manufactured_date}}">
+                                                    <h5>Purchase Date</h5>
+                                                    <input type="text" name="purchased_date" class="form-control" placeholder="Purchase Date (Y-m-d)" value="{{$as->asset_purchase_date}}" >
                                                     </div>
 
                                                     <div class="form-group">
-                                                    <h5>Statis</h5>
+                                                    <h5>Warranty Date</h5>
+                                                    <input type="text" name="warranty_date" class="form-control" placeholder="Warranty Date (Y-m-d)" value="{{$as->asset_warranty_date}}" >
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                    <h5>Assigned To</h5>
+                                                    <input type="text" name="assigned_to" class="form-control" placeholder="Assigned To" value="{{$as->asset_assigned_to}}">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                    <h5>Location</h5>
+                                                    <input type="text" name="location" class="form-control" placeholder="Location" value="{{$as->asset_location}}">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                    <h5>Software</h5>
+                                                    <input type="text" name="software" class="form-control" placeholder="Software" value="{{$as->asset_software}}">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                    <h5>Status</h5>
                                                     <select name="status" class="form-control">
-                                                    <option>{{$as->assay_status}}</option>
+                                                    <option>{{$as->asset_status}}</option>
                                                     <option>----</option>
-                                                    <option>Approval In Progress</option>
-                                                    <option>Approved For Sale</option>
-                                                    <option>Un-Approved</option>
-                                                    <option>Sold-Out</option>
+                                                    <option>Approved</option>
+                                                    <option>Issued</option>
+                                                    <option>In Storage</option>
+                                                    <option>Disposed</option>
                                                     </select>
                                                     </div>
 
