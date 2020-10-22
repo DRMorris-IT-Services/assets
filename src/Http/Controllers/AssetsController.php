@@ -127,9 +127,9 @@ class AssetsController extends Controller
     {
         //
 
-        assets::where('assay_id', $id)
+        assets::where('asset_id', $id)
         ->delete();
 
-        return back()->withDelete(__('Assay Successfully Deleted.'));
+        return back()->withDelete(__('Asset Successfully Deleted.'));
     }
 }
