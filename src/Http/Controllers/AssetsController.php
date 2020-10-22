@@ -150,4 +150,40 @@ class AssetsController extends Controller
 
         return redirect('/assets')->withDelete(__('Asset Successfully Deleted.'));
     }
+
+    public function onboard($id, $hostname, $ip, $os, $make, $vendor)
+    {
+        
+        return view('assets::onboard',[
+            'id' => $id,
+            'hostname' => $hostname,
+            'ip' => $ip,
+            'os' => $os,
+            'make' => $make,
+            'vendor' => $vendor,
+        ]);
+    }
+
+    public function onboard_action(request $request)
+    {
+        $asset_id = Str::random(60);
+        $barcode = rand();
+
+        assets::create([
+            'asset_id' => $asset_id,
+            'asset_name' => $request['hostname'], 
+            'asset_model' => $request['make'], 
+            'asset_serial_no' => $request['serial_no'], 
+            'asset_barcode'  => $barcode, 
+            'asset_tag_no'  => $request['asset_tag'], 
+            'asset_purchase_date'  => $request['purchase_date'], 
+            'asset_warranty_date' => $request['warranty_date'], 
+            'asset_assigned_to'  => $request['assigned_to'], 
+            'asset_location'  => $request['location'], 
+            'asset_software'  => $request['software'],
+            'asset_status' => "Pending Approval",
+        ]);
+
+        return view('assets::onboard_complete');
+    }
 }

@@ -11,6 +11,7 @@ Route::group(['namespace' => 'duncanrmorris\assets\Http\Controllers'], function(
         Route::get('assets/view/{id}', 'AssetsController@show')->name('assets.view');
         Route::put('assets/del/{id}', 'AssetsController@destroy')->name('assets.del');
         Route::get('assets/search/{search}','AssetsController@search')->name('assets.search');
+        
 
     ### CONTROLS ###
     Route::get('assets/controls/{id}', 'AssetscontrolsController@index')->name('assets.controls');
@@ -20,4 +21,7 @@ Route::group(['namespace' => 'duncanrmorris\assets\Http\Controllers'], function(
     Route::put('assets/controls/update/{id}', 'AssetscontrolsController@update')->name('assets.controls.update');
 
     });
+
+    Route::get('assets/onboard/{id}/{hostname}/{ip}/{os}/{make}/{vendor}','AssetsController@onboard')->name('assets.onboard');
+    Route::put('assets/onbaord/action', 'AssetsController@onboard_action')->name('assets.onboard.action');
 });
