@@ -159,7 +159,7 @@ class AssetsController extends Controller
         return redirect('/assets')->withDelete(__('Asset Successfully Deleted.'));
     }
 
-    public function onboard($id, $hostname, $ip, $os, $make, $vendor)
+    public function onboard($id, $hostname, $ip, $os, $make, $vendor, $sn)
     {
         
         return view('assets::onboard',[
@@ -169,6 +169,7 @@ class AssetsController extends Controller
             'os' => $os,
             'make' => $make,
             'vendor' => $vendor,
+            'sn' => $sn,
             
         ]);
     }

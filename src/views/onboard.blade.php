@@ -107,6 +107,26 @@
                     </div>
 
                     <div class="form-group">
+                    <h5>Serial Number</h5>
+                    <input type="text" name="serial_no" class="form-control" placeholder="Serial Number" value="{{$sn}}">
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Asset Tag</h5>
+                    <input type="text" name="asset_tag" class="form-control" placeholder="Asset Tag" >
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Purchase Date</h5>
+                    <input type="text" name="purchase_date" class="form-control" placeholder="Purchase Date (Y-m-d)" >
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Warranty Date</h5>
+                    <input type="text" name="warranty_date" class="form-control" placeholder="Warranty Date (Y-m-d)" >
+                    </div>
+
+                    <div class="form-group">
                     <h5>Hostname</h5>
                     <input type="text" name="hostname" class="form-control" placeholder="Hostname" value="{{$hostname}}" >
                     </div>
