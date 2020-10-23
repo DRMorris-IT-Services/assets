@@ -61,7 +61,9 @@ Within this package we use the following database structure:
 |Field|Type   |Null   |Notes   |
 |-----|-------|-------|--------|
 |asset_id|String|No|Auto generated string|
+|asset_client|String|Yes||
 |asset_name|String|Yes||
+|asset_manufacturer|String|Yes||
 |asset_model|String|Yes||
 |asset_make|String|Yes||
 |asset_serial_no|String|Yes||
@@ -71,6 +73,9 @@ Within this package we use the following database structure:
 |asset_assigned_to|String|Yes||
 |asset_location|String|Yes||
 |asset_software|String|Yes||
+|asset_ip|String|Yes||
+|asset_hostname|String|Yes||
+|asset_status|String|Yes||
 
 
 ### Assets Controls Table
