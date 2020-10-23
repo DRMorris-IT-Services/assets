@@ -113,7 +113,7 @@
 
                     <div class="form-group">
                     <h5>IP Address</h5>
-                    <input type="text" name="ip_address" class="form-control" placeholder="IP Address" value="{{$ip}}" >
+                    <input type="text" name="ip" class="form-control" placeholder="IP Address" value="{{$ip}}" >
                     </div>
 
                     <div class="form-group">

@@ -51,6 +51,9 @@
                                 Name
                             </th>
                             <th>
+                                Client
+                            </th>
+                            <th>
                                 Serial No.
                             </th>
                             <th>
@@ -77,6 +80,7 @@
                         @foreach( $assets as $as)
                         <tr>
                         <td><a href="{{ route('assets.view',[$as->asset_id]) }}" >{{$as->asset_name}}</a></td>
+                        <td>{{$as->asset_client}}</td>
                         <td>{{$as->asset_serial_no}}</td>
                         <td>{{$as->asset_tag_no}}</td>
                         <td>{{date('d/m/y', strtotime($as->asset_purchase_date))}}</td>

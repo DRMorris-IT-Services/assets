@@ -17,6 +17,7 @@ class assets extends Model
      */
     protected $fillable = [
         'asset_id', 
+        'asset_client',
         'asset_name' ,
         'asset_manufacturer',
         'asset_model', 
