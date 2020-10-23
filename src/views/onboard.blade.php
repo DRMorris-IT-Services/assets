@@ -65,7 +65,8 @@
             }
         </style>
     </head>
-    <body>
+    <body class="c-app flex-row align-items-center">
+
 <div class="container">
     
 
@@ -81,13 +82,18 @@
                     @method('PUT')  
 
                     <div class="form-group">
-                    <h5>Client</h5>
-                    <input type="text" name="client" class="form-control" placeholder="Client" >
+                    <h5>Company</h5>
+                    <input type="text" name="client" class="form-control" placeholder="Your Company Name" >
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Asset Name</h5>
+                    <input type="text" name="name" class="form-control" placeholder="Asset Name" value="{{$hostname}}" >
                     </div>
 
                     <div class="form-group">
                     <h5>Your Name</h5>
-                    <input type="text" name="assigned_to" class="form-control" placeholder="Your Name" value="{{$name}}" >
+                    <input type="text" name="assigned_to" class="form-control" placeholder="Your Name" >
                     </div>
 
                     <div class="form-group">
@@ -114,6 +120,7 @@
                     <h5>Software</h5>
                     <input type="text" name="software" class="form-control" placeholder="Software" value="{{$os}}" >
                     </div>
+
                     
                     <div class="card-footer">
                     <button type="submit" class="btn btn-success justify-content-end">Onboard Asset</button>

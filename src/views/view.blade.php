@@ -38,6 +38,10 @@
         </li>
 
         <li class="nav-item">
+        <a class="nav-link" id="network-tab" data-toggle="tab" href="#network" role="tab" aria-controls="network" aria-selected="false">Network</a>
+        </li>
+
+        <li class="nav-item">
         <a class="nav-link" id="software-tab" data-toggle="tab" href="#software" role="tab" aria-controls="software" aria-selected="false">Software</a>
         </li>
 
@@ -63,6 +67,12 @@
                     @if($c->asset_view == "on")
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                    <div class="form-group">
+                    <h5>Client</h5>
+                    {{$as->asset_client}}
+                    </div>
+
                     <div class="form-group">
                                                     <h5>Name</h5>
                                                     {{$as->asset_name}}
@@ -103,6 +113,18 @@
                                                     <div class="form-group">
                                                     <h5>Warranty Date</h5>
                                                     {{$as->asset_warranty_date}}
+                                                    </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="network" role="tabpanel" aria-labelledby="network-tab">
+                                                    <div class="form-group">
+                                                    <h5>IP Address</h5>
+                                                    {{$as->asset_ip}}
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                    <h5>Hostname</h5>
+                                                    {{$as->asset_name}}
                                                     </div>
                     </div>
 

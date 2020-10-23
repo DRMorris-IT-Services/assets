@@ -65,7 +65,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="c-app flex-row align-items-center">
 <div class="container">
     
 
@@ -79,6 +79,7 @@
 
                 <h1>Thank You</h1>
                 <p>The onboarding process has been completed and your asset is now being managed.</p>
+                <p>You can now Close this web browser tab.</p>
                 </div>
             </div>
         </div>

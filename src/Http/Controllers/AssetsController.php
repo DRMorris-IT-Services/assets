@@ -56,7 +56,9 @@ class AssetsController extends Controller
 
         assets::create([
             'asset_id' => $asset_id,
-            'asset_name' => $request['name'], 
+            'asset_client' => $request['client'],
+            'asset_name' => $request['name'],
+            'asset_manufacturer' => $request['manufacturer'], 
             'asset_model' => $request['model'], 
             'asset_serial_no' => $request['serial_no'], 
             'asset_barcode'  => $barcode, 
@@ -66,6 +68,8 @@ class AssetsController extends Controller
             'asset_assigned_to'  => $request['assigned_to'], 
             'asset_location'  => $request['location'], 
             'asset_software'  => $request['software'],
+            'asset_ip' => $request['ip'],
+            'asset_hostname' => $request['hostname'],
             'asset_status' => "Pending Approval",
         ]);
 
@@ -119,7 +123,9 @@ class AssetsController extends Controller
 
         assets::where('asset_id', $id)
         ->update([
-            'asset_name' => $request['name'], 
+            'asset_name' => $request['name'],
+            'asset_client' => $request['client'],
+            'asset_manufacturer' => $request['manufacturer'],
             'asset_model' => $request['model'], 
             'asset_serial_no' => $request['serial_no'], 
             'asset_barcode'  => $request['barcode'],
@@ -129,6 +135,8 @@ class AssetsController extends Controller
             'asset_assigned_to'  => $request['assigned_to'], 
             'asset_location'  => $request['location'], 
             'asset_software'  => $request['software'],
+            'asset_ip' => $request['ip'],
+            'asset_hostname' => $request['hostname'],
             'asset_status' => $request['status'],
         ]);
 
@@ -151,7 +159,7 @@ class AssetsController extends Controller
         return redirect('/assets')->withDelete(__('Asset Successfully Deleted.'));
     }
 
-    public function onboard($id, $hostname, $ip, $os, $make, $vendor, $name)
+    public function onboard($id, $hostname, $ip, $os, $make, $vendor)
     {
         
         return view('assets::onboard',[
@@ -161,7 +169,7 @@ class AssetsController extends Controller
             'os' => $os,
             'make' => $make,
             'vendor' => $vendor,
-            'name' => $name,
+            
         ]);
     }
 
@@ -172,7 +180,9 @@ class AssetsController extends Controller
 
         assets::create([
             'asset_id' => $asset_id,
-            'asset_name' => $request['hostname'], 
+            'asset_client' => $request['client'],
+            'asset_name' => $request['name'],
+            'asset_manufacturer' => $request['manufacturer'],
             'asset_model' => $request['make'], 
             'asset_serial_no' => $request['serial_no'], 
             'asset_barcode'  => $barcode, 
@@ -182,6 +192,8 @@ class AssetsController extends Controller
             'asset_assigned_to'  => $request['assigned_to'], 
             'asset_location'  => $request['location'], 
             'asset_software'  => $request['software'],
+            'asset_ip' => $request['ip'],
+            'asset_hostname' => $request['hostname'],
             'asset_status' => "Pending Approval",
         ]);
 

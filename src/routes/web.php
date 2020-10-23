@@ -22,6 +22,6 @@ Route::group(['namespace' => 'duncanrmorris\assets\Http\Controllers'], function(
 
     });
 
-    Route::get('assets/onboard/{id}/{hostname}/{ip}/{os}/{make}/{vendor}/{name}','AssetsController@onboard')->name('assets.onboard');
+    Route::get('assets/onboard/{id}/{hostname}/{ip}/{os}/{make}/{vendor}/','AssetsController@onboard')->name('assets.onboard');
     Route::put('assets/onbaord/action', 'AssetsController@onboard_action')->name('assets.onboard.action');
 });

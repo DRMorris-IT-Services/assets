@@ -114,9 +114,20 @@
                 @csrf
                 @method('PUT')  
                 <div class="modal-body">
+
+                    <div class="form-group">
+                    <h5>Client</h5>
+                    <input type="text" name="client" class="form-control" placeholder="Client Name">
+                    </div>
+
                     <div class="form-group">
                     <h5>Name</h5>
-                    <input type="text" name="name" class="form-control" placeholder="Assay Name" required>
+                    <input type="text" name="name" class="form-control" placeholder="Asset Name" required>
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Manufacturer</h5>
+                    <input type="text" name="manufacturer" class="form-control" placeholder="Manufacturer" >
                     </div>
 
                     <div class="form-group">
@@ -157,6 +168,16 @@
                     <div class="form-group">
                     <h5>Software</h5>
                     <input type="text" name="software" class="form-control" placeholder="Software" >
+                    </div>
+
+                    <div class="form-group">
+                    <h5>IP Address</h5>
+                    <input type="text" name="ip" class="form-control" placeholder="IP Address" >
+                    </div>
+
+                    <div class="form-group">
+                    <h5>Hostname</h5>
+                    <input type="text" name="hostname" class="form-control" placeholder="Hostname" >
                     </div>
 
                     

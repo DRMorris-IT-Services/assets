@@ -16,7 +16,9 @@ class CreateAssetsTable extends Migration
         Schema::create('assets', function (Blueprint $table) {
             $table->id();
             $table->string('asset_id');
+            $table->string('asset_client')->nullable();
             $table->string('asset_name')->nullable();
+            $table->string('asset_manufacturer')->nullable();
             $table->string('asset_model')->nullable();
             $table->string('asset_serial_no')->nullable();
             $table->string('asset_barcode')->nullable();
@@ -26,6 +28,8 @@ class CreateAssetsTable extends Migration
             $table->string('asset_assigned_to')->nullable();
             $table->string('asset_location')->nullable();
             $table->string('asset_software')->nullable();
+            $table->string('asset_ip')->nullable();
+            $table->string('asset_hostname')->nullable();
             $table->string('asset_status')->nullable();
             $table->timestamps();
         });

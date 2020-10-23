@@ -38,6 +38,10 @@
         </li>
 
         <li class="nav-item">
+        <a class="nav-link" id="network-tab" data-toggle="tab" href="#network" role="tab" aria-controls="network" aria-selected="false">Network</a>
+        </li>
+
+        <li class="nav-item">
         <a class="nav-link" id="software-tab" data-toggle="tab" href="#software" role="tab" aria-controls="software" aria-selected="false">Software</a>
         </li>
 
@@ -75,9 +79,20 @@
                                                 @method('PUT')  
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                    <div class="form-group">
+                    <h5>Client</h5>
+                    <input type="text" name="client" class="form-control" placeholder="Client Name" value="{{$as->asset_client}}" onchange="submit()">
+                    </div>
+
                     <div class="form-group">
                                                     <h5>Name</h5>
                                                     <input type="text" name="name" class="form-control" placeholder="Assay Name" required value="{{$as->asset_name}}" onchange="submit()">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                    <h5>Manufacturer</h5>
+                                                    <input type="text" name="manufacturer" class="form-control" placeholder="Manufacturer" value="{{$as->asset_manufacturer}}" onchange="submit()" >
                                                     </div>
 
                                                     <div class="form-group">
@@ -122,6 +137,13 @@
                                                     <div class="form-group">
                                                     <h5>Warranty Date</h5>
                                                     <input type="text" name="warranty_date" class="form-control" placeholder="Warranty Date (Y-m-d)" value="{{$as->asset_warranty_date}}" onchange="submit()">
+                                                    </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="network" role="tabpanel" aria-labelledby="network-tab">
+                                                    <div class="form-group">
+                                                    <h5>IP Address</h5>
+                                                    <input type="text" name="ip" class="form-control" placeholder="IP Address" value="{{$as->asset_ip}}" onchange="submit()">
                                                     </div>
                     </div>
 
